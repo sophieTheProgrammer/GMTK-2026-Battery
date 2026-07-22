@@ -5,6 +5,7 @@
 [node name="Panel" type="Panel" parent="." unique_id=1760701443]
 offset_right = 822.0
 offset_bottom = 124.0
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=679238702]
 offset_left = 21.0
@@ -13,4 +14,5 @@ offset_right = 812.0
 offset_bottom = 117.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
+mouse_filter = 2
 text = "hi this is ui"

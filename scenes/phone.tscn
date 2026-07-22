@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://ddahf4toxyraj"]
 
 [ext_resource type="Script" uid="uid://bvtiy2y4gi7ge" path="res://scripts/phone.gd" id="1_08mii"]
+[ext_resource type="PackedScene" uid="uid://byhrxl37ca8oa" path="res://scenes/shoot_indicator.tscn" id="2_ewalk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
 size = Vector2(61, 106)
 
 [node name="Phone" type="CharacterBody2D" unique_id=1811385161]
 script = ExtResource("1_08mii")
+
+[node name="shoot_indicator" parent="." unique_id=438777180 instance=ExtResource("2_ewalk")]
+position = Vector2(-19, -82)
+rotation = 4.712389
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=466371636]
 offset_left = -35.0
