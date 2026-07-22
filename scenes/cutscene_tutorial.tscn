@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bbjovh6gli8wl"]
+
+[ext_resource type="Script" uid="uid://dl6fsltd4e43y" path="res://scripts/ui/tutorial.gd" id="1_a6fc2"]
+[ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="2_a6fc2"]
+
+[node name="CutsceneTutorial" type="Node2D" unique_id=965549165]
+script = ExtResource("1_a6fc2")
+
+[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("2_a6fc2")]
+layer = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1232120192]
+
+[node name="TutorialImage" type="Sprite2D" parent="CanvasLayer" unique_id=1665876256]
+position = Vector2(576, 313)
+scale = Vector2(9, 4.890625)
+
+[node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1700390402]
+offset_left = 59.0
+offset_top = 38.0
+offset_right = 786.0
+offset_bottom = 94.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+text = "dashkfkjdhs"
+
+[node name="ClickToContinueLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1833160664]
+offset_left = 885.0
+offset_top = 549.0
+offset_right = 1141.0
+offset_bottom = 604.0
+text = "Click to continue"
+
+[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=255640173]
+visible = false
+offset_left = 393.0
+offset_top = 319.0
+offset_right = 757.0
+offset_bottom = 456.0
+text = "START GAME :D"
+
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]

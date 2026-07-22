@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cjulv74qj1553"]
+
+[ext_resource type="Script" uid="uid://bpq6m57xt5yl2" path="res://scripts/ui/start_screen.gd" id="1_jaeev"]
+
+[node name="start" type="Node2D" unique_id=1507737572]
+script = ExtResource("1_jaeev")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1354601927]
+
+[node name="StartScreenTutorialButton" type="Button" parent="CanvasLayer" unique_id=688141163]
+anchors_preset = -1
+anchor_top = -0.16820988
+anchor_right = 0.2847222
+offset_left = 290.0
+offset_top = 380.0
+offset_right = 462.0
+offset_bottom = 445.0
+text = "tutorial"
+metadata/_edit_use_anchors_ = true
+
+[node name="StartScreenStartButton" type="Button" parent="CanvasLayer" unique_id=622851497]
+offset_left = 419.0
+offset_top = 513.0
+offset_right = 683.0
+offset_bottom = 604.0
+text = "quickstart"
+
+[node name="StartScreenSettingsButton" type="Button" parent="CanvasLayer" unique_id=993410638]
+offset_left = 876.0
+offset_top = 7.0
+offset_right = 1140.0
+offset_bottom = 98.0
+text = "settings"
+
+[node name="StartTitle" type="RichTextLabel" parent="CanvasLayer" unique_id=94163453]
+offset_left = 268.0
+offset_top = 46.0
+offset_right = 903.0
+offset_bottom = 213.0
+text = "START SCREEN"
+
+[connection signal="pressed" from="CanvasLayer/StartScreenTutorialButton" to="." method="_button_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/StartScreenStartButton" to="." method="_button_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/StartScreenSettingsButton" to="." method="_button_pressed" flags=18]
