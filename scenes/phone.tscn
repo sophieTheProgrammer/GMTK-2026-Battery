@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddahf4toxyraj"]
+
+[ext_resource type="Script" uid="uid://bvtiy2y4gi7ge" path="res://scripts/phone.gd" id="1_08mii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
+size = Vector2(61, 106)
+
+[node name="Phone" type="CharacterBody2D" unique_id=1811385161]
+script = ExtResource("1_08mii")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=466371636]
+offset_left = -35.0
+offset_top = -57.0
+offset_right = 33.0
+offset_bottom = 57.0
+pivot_offset = Vector2(41, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319360330]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_h2h35")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=591552108]
+position = Vector2(-35, -57)
+color = Color(0.45646393, 0.456464, 0.456464, 1)
+polygon = PackedVector2Array(5, 28, 33, 5, 62, 28)

@@ -26,7 +26,7 @@ func display_debug_var(name : String, variable : Variant) -> void:
 		debug_v_box.add_child(new_label)
 		debug_vars_to_update[name] = new_label
 	else: # otherwise update the debug var
-		print("variable updated")
+		#print("variable updated")
 		debug_vars_to_update[name].text = name + ": " + str(variable)
  
 func _update_fps() -> void:
