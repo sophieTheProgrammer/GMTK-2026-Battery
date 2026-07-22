@@ -1,13 +1,10 @@
-extends Control
+extends CanvasLayer
 
 @export var debug_toggle_btn: Button
 @export var fps_label: Label
 @export var debug_v_box: VBoxContainer
 
 var debug_vars_to_update : Dictionary = {}
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,8 +12,7 @@ func _process(delta: float) -> void:
 	
 
 ## WARNING: WILL CAUSE PROBLEMS IF YOU HAVE 2 VARS YOU WANT TO DISPLAY BUT THEY HAVE THE SAME NAME
-## EVERYTIME YOU RUN IT IT IT WILL UPDATE THAT VARIABLE SO THE BEST IS TO PUT IT IN
-
+## EVERYTIME YOU RUN IT IT IT WILL UPDATE THAT VARIABLE SO THE BEST IS TO PUT IT INx
 func display_debug_var(name : String, variable : Variant) -> void:
 	# if it is not in the list of vars to update then create a label
 	if name not in debug_vars_to_update.keys():
