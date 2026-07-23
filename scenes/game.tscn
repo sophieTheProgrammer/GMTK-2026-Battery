@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://dkvrwufrtbtty" path="res://scripts/camera_effects.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://ddahf4toxyraj" path="res://scenes/phone.tscn" id="3_lnu2h"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
+size = Vector2(273, 506)
+
 [node name="game" type="Node2D" unique_id=404250698]
 
 [node name="Phone" parent="." unique_id=1811385161 instance=ExtResource("3_lnu2h")]
@@ -13,3 +16,16 @@ position = Vector2(176, 43)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 script = ExtResource("2_yqjtg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1183983615]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1727100051]
+position = Vector2(-441, 85)
+shape = SubResource("RectangleShape2D_h2h35")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1962957068]
+offset_left = -588.0
+offset_top = -152.0
+offset_right = -316.0
+offset_bottom = 339.0
+color = Color(0.601223, 0.601223, 0.60122293, 1)

@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+@onready var shoot_indicator: Node2D = $shoot_indicator
+
 # Constants
 const TOP_SPIN_SPEED := 10.0
 const SPIN_ACCELERATION := 2.0
-const SPEED := 700.0
+const SPEED := 1000.0
 const DECELERATION : = 800.0
 
 var current_spin_velocity : float = 0.0
@@ -29,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func handle_idle(delta: float) -> void:
+	shoot_indicator.show()
+	
 	var direction := Input.get_axis("right", "left")
 
 	var target_spin_speed : float = TOP_SPIN_SPEED * direction
@@ -46,6 +50,8 @@ func handle_aiming(delta : float) -> void:
 		state = player_state.LAUNCHING
 		velocity = SPEED * Vector2.UP.rotated(rotation)
 func handle_launching(delta : float) -> void:
+	shoot_indicator.hide()
+	
 	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
 	if abs(velocity.x) < 0.5 and abs(velocity.y) < 0.5:
 		velocity = Vector2.ZERO
