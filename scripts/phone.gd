@@ -38,7 +38,6 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 func handle_idle(delta: float) -> void:
-	shoot_indicator.show()
 	
 	var direction := Input.get_axis("right", "left")
 
@@ -52,17 +51,19 @@ func handle_idle(delta: float) -> void:
 		current_spin_velocity = 0
 		state = player_state.AIMING
 	Debug.display_debug_var("spin velocity", int(current_spin_velocity))
+
 func handle_aiming(delta : float) -> void:
 	if Input.is_action_just_released("click"):
 		state = player_state.LAUNCHING
-		velocity = SPEED * Vector2.UP.rotated(rotation)
+		
+		velocity = SPEED * -Vector2.UP.rotated(rotation)
+
 func handle_launching(delta : float) -> void:
-	shoot_indicator.hide()
-	
 	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
 	if abs(velocity.x) < 0.5 and abs(velocity.y) < 0.5:
 		velocity = Vector2.ZERO
 		state = player_state.IDLE
+
 func handle_charging(delta: float) -> void:
 	velocity = Vector2.ZERO
 func _on_phone_enter_charger(area : Area2D) -> void:
