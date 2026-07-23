@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dkvrwufrtbtty" path="res://scripts/camera_effects.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://ddahf4toxyraj" path="res://scenes/phone.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="4_lbhrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
 size = Vector2(273, 506)
@@ -15,6 +16,7 @@ position = Vector2(176, 43)
 [node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_uwrxv")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_yqjtg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1183983615]
@@ -29,3 +31,6 @@ offset_top = -152.0
 offset_right = -316.0
 offset_bottom = 339.0
 color = Color(0.601223, 0.601223, 0.60122293, 1)
+
+[node name="charger" parent="." unique_id=9780923 instance=ExtResource("4_lbhrr")]
+position = Vector2(-383, -449)

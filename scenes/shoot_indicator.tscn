@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://byhrxl37ca8oa"]
 
 [node name="shoot_indicator" type="Node2D" unique_id=438777180]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2069777276]
+visible = false
 offset_right = 219.0
 offset_bottom = 40.0
 color = Color(0.6901961, 0.88235295, 0.6901961, 1)

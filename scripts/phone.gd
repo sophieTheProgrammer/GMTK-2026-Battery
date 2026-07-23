@@ -14,18 +14,22 @@ enum player_state {
 	IDLE,
 	AIMING,
 	LAUNCHING,
+	CHARGING
 }
 func _ready() -> void:
-	pass
+	EventBus.phone_enter_charger.connect(_on_phone_enter_charger)
 
 var state : player_state = player_state.IDLE
 func _physics_process(delta: float) -> void:
-	if state == player_state.IDLE:
-		handle_idle(delta)
-	elif state == player_state.AIMING:
-		handle_aiming(delta)
-	elif state == player_state.LAUNCHING:
-		handle_launching(delta)
+	match state:
+		player_state.IDLE:
+			handle_idle(delta)
+		player_state.AIMING:
+			handle_aiming(delta)
+		player_state.LAUNCHING:
+			handle_launching(delta)
+		player_state.CHARGING:
+			handle_charging(delta)
 	Debug.display_debug_var("state", player_state.find_key(state))
 	Debug.display_debug_var("player velocity", velocity)
 	Debug.display_debug_var("player degrees", int(rotation_degrees))
@@ -59,3 +63,7 @@ func handle_launching(delta : float) -> void:
 	if abs(velocity.x) < 0.5 and abs(velocity.y) < 0.5:
 		velocity = Vector2.ZERO
 		state = player_state.IDLE
+func handle_charging(delta: float) -> void:
+	velocity = Vector2.ZERO
+func _on_phone_enter_charger(area : Area2D) -> void:
+	state = player_state.CHARGING

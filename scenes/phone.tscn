@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
 size = Vector2(61, 106)
 
-[node name="Phone" type="CharacterBody2D" unique_id=1811385161]
+[node name="Phone" type="CharacterBody2D" unique_id=1811385161 groups=["phone"]]
 script = ExtResource("1_08mii")
 
 [node name="Label" type="Label" parent="." unique_id=1462357997]
