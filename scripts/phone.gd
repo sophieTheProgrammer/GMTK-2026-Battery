@@ -3,7 +3,8 @@ extends CharacterBody2D
 # Constants
 const TOP_SPIN_SPEED := 10.0
 const SPIN_ACCELERATION := 2.0
-const SPEED := 50000.0
+const SPEED := 700.0
+const DECELERATION : = 800.0
 
 var current_spin_velocity : float = 0.0
 
@@ -19,8 +20,11 @@ func _physics_process(delta: float) -> void:
 		handle_idle(delta)
 	elif state == player_state.AIMING:
 		handle_aiming(delta)
+	elif state == player_state.LAUNCHING:
+		handle_launching(delta)
 	Debug.display_debug_var("state", player_state.find_key(state))
-
+	Debug.display_debug_var("player velocity", velocity)
+	Debug.display_debug_var("player degrees", int(rotation_degrees))
 		
 	move_and_slide()
 
@@ -38,7 +42,11 @@ func handle_idle(delta: float) -> void:
 
 func handle_aiming(delta : float) -> void:
 	if Input.is_action_just_released("click"):
-		velocity = SPEED * delta * Vector2.UP.rotated(rotation)
-		
-	velocity = lerp(velocity, Vector2.ZERO, 0.2)
-	Debug.display_debug_var("player velocity", velocity)
+		state = player_state.LAUNCHING
+		velocity = SPEED * Vector2.UP.rotated(rotation)
+func handle_launching(delta : float) -> void:
+	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
+	
+	if abs(velocity.x) < 0.5 and abs(velocity.y) < 0.5:
+		velocity = Vector2.ZERO
+		state = player_state.IDLE
