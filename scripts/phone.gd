@@ -5,7 +5,7 @@ extends CharacterBody2D
 # Constants
 const TOP_SPIN_SPEED := 10.0
 const SPIN_ACCELERATION := 2.0
-const SPEED := 1000.0
+const SPEED := 1200.0
 const DECELERATION : = 800.0
 
 var current_spin_velocity : float = 0.0
@@ -15,6 +15,8 @@ enum player_state {
 	AIMING,
 	LAUNCHING,
 }
+func _ready() -> void:
+	pass
 
 var state : player_state = player_state.IDLE
 func _physics_process(delta: float) -> void:
@@ -28,8 +30,9 @@ func _physics_process(delta: float) -> void:
 	Debug.display_debug_var("player velocity", velocity)
 	Debug.display_debug_var("player degrees", int(rotation_degrees))
 		
-	move_and_slide()
-
+	var collision : KinematicCollision2D = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
 func handle_idle(delta: float) -> void:
 	shoot_indicator.show()
 	
@@ -44,7 +47,7 @@ func handle_idle(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		current_spin_velocity = 0
 		state = player_state.AIMING
-	Debug.display_debug_var("spin velocity", current_spin_velocity)
+	Debug.display_debug_var("spin velocity", int(current_spin_velocity))
 func handle_aiming(delta : float) -> void:
 	if Input.is_action_just_released("click"):
 		state = player_state.LAUNCHING

@@ -8,6 +8,7 @@ var current_player :AudioStreamPlayer = null
 # Sound Effect Paths
 # Add SFX definitions, then play the SFX in other scripts with play_sfx
 const CLICK = preload("res://stock/interface-sounds/click_002.ogg")
+const LOW_POWER_WARNING = preload("res://audio/universfield-low-power-warning-487889.mp3")
 
 
 # MUSIC: only one song can play at a time, it will override, Music bus
