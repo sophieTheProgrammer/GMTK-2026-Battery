@@ -38,15 +38,15 @@ func handle_idle(delta: float) -> void:
 	rotation += current_spin_velocity * delta
 	
 	if Input.is_action_just_pressed("click"):
+		current_spin_velocity = 0
 		state = player_state.AIMING
-
+	Debug.display_debug_var("spin velocity", current_spin_velocity)
 func handle_aiming(delta : float) -> void:
 	if Input.is_action_just_released("click"):
 		state = player_state.LAUNCHING
 		velocity = SPEED * Vector2.UP.rotated(rotation)
 func handle_launching(delta : float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
-	
 	if abs(velocity.x) < 0.5 and abs(velocity.y) < 0.5:
 		velocity = Vector2.ZERO
 		state = player_state.IDLE
