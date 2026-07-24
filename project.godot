@@ -41,6 +41,7 @@ phone=""
 [gui]
 
 theme/custom="uid://dn4leoiqtpx61"
+theme/custom_font="uid://bdoh2bj8573au"
 
 [input]
 

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var shoot_indicator: Node2D = $shoot_indicator
+@onready var battery_indicator_label: Label = $BatteryIndicatorLabel
 
 # Constants
 const TOP_SPIN_SPEED := 10.0
@@ -9,6 +10,7 @@ const SPEED := 1200.0
 const DECELERATION : = 800.0
 
 var current_spin_velocity : float = 0.0
+var battery_level : int = 20
 
 enum player_state {
 	IDLE,
@@ -18,7 +20,7 @@ enum player_state {
 }
 func _ready() -> void:
 	EventBus.phone_enter_charger.connect(_on_phone_enter_charger)
-
+	set_battery_level(0)
 var state : player_state = player_state.IDLE
 func _physics_process(delta: float) -> void:
 	match state:
@@ -50,7 +52,7 @@ func handle_aiming(delta : float) -> void:
 	current_spin_velocity = 0
 	if Input.is_action_just_released("click"):
 		state = player_state.LAUNCHING
-		
+		set_battery_level(-1)
 		velocity = SPEED * -Vector2.UP.rotated(rotation)
 
 func handle_launching(delta : float) -> void:
@@ -73,3 +75,7 @@ func handle_rotation(delta: float) -> void:
 	# you can normally lerp velocity with other properties and just lerp the velocity but spin doesn't have any
 	# once we've updated what spin velocity should be, we can add it to rotation since velocity = change/time and you are applying this change
 	rotation += current_spin_velocity * delta
+
+func set_battery_level(amount : int) -> void:
+	battery_level += amount
+	battery_indicator_label.text = str(battery_level)
