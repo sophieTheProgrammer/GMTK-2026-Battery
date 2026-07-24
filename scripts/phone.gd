@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 # Constants
 const TOP_SPIN_SPEED := 10.0
-const SPIN_ACCELERATION := 2.0
+const SPIN_ACCELERATION := 5.0
 const SPEED := 1200.0
 const DECELERATION : = 800.0
 

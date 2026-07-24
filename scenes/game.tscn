@@ -12,6 +12,7 @@ size = Vector2(273, 506)
 [node name="game" type="Node2D" unique_id=404250698]
 
 [node name="WoodBackground" type="Sprite2D" parent="." unique_id=1820250660]
+z_index = -2
 position = Vector2(0.00012207031, 0.00012207031)
 scale = Vector2(1.8035368, 1.8035368)
 texture = ExtResource("1_iywne")
