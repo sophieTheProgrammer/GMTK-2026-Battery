@@ -34,6 +34,7 @@ func _physics_process(delta: float) -> void:
 			handle_charging(delta)
 	Debug.display_debug_var("state", player_state.find_key(state))
 	Debug.display_debug_var("player velocity", round(velocity))
+	Debug.display_debug_var("position", position)
 
 	var collision : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
@@ -61,13 +62,14 @@ func handle_launching(delta : float) -> void:
 		state = player_state.IDLE
 
 func handle_charging(delta: float) -> void:
-	pass
+	velocity = Vector2.ZERO
+	#position = Vector2.ZERO
 
 # connects from _on_phone_enter_charger
 func _on_phone_enter_charger(area : Area2D) -> void:
 	state = player_state.CHARGING
-	print("CHANGE STATE TO HCARGING")
-	velocity = Vector2.ZERO
+	print("CHANGE STATE TO CHARGING")
+	
 func handle_rotation(delta: float) -> void:
 	var direction := Input.get_axis("right", "left")
 
@@ -82,6 +84,6 @@ func set_battery_level(amount : int) -> void:
 	battery_indicator_label.text = str(battery_level)
 
 func _start_next_level() -> void:
+	position = Vector2.ZERO
 	state = player_state.IDLE
 	print("CHNAGE STATE TO IDLE")
-	position = Vector2.ZERO

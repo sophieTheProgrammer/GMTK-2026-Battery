@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://8vjhb0tvcq8e"]
+
+[ext_resource type="Script" uid="uid://h0xbq1bkej5b" path="res://levels/level.gd" id="1_hldmh"]
+[ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="2_gew73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
+size = Vector2(641.5, 1153)
+
+[node name="Level_1" type="Node2D" unique_id=1029799298]
+script = ExtResource("1_hldmh")
+
+[node name="charger" parent="." unique_id=9780923 instance=ExtResource("2_gew73")]
+position = Vector2(528, -429)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1866294068]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=895088896]
+position = Vector2(-1027, -45)
+rotation = 1.5777776
+shape = SubResource("RectangleShape2D_h2h35")
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=85945958]
+offset_left = -447.0
+offset_top = -329.0
+offset_right = 144.0
+offset_bottom = 800.0
+rotation = 1.5777776
+color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=583778218]
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2" unique_id=200263676]
+color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+polygon = PackedVector2Array(-981, -573, -981, -1411, 2244, -1456, 2215, -847, 1359, -740, 1326, -835, -125, -819)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=2055344112]
+polygon = PackedVector2Array(-981, -573, -981, -1411, 2244, -1456, 2229, -954, 1773, -721, 1326, -835, -125, -819)

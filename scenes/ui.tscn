@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://d13baxhqbwdm6"]
 
+[ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="1_nt7q6"]
+
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
+
+[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("1_nt7q6")]
 
 [node name="Panel" type="Panel" parent="." unique_id=1760701443]
 offset_right = 822.0

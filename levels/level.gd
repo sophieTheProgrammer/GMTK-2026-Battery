@@ -16,11 +16,14 @@ func _on_phone_enter_charger(area : Area2D) -> void:
 		return
 	
 	var next_level : Node = load(next_level_path).instantiate()
-	next_level.name = "Level" + str(next_level_number)
-	
-	print(next_level)
-	get_tree().current_scene.call_deferred("add_child", next_level)
+	next_level.name = "level" + str(next_level_number)
+	next_level.add_to_group("level")
+
+	await Global.fade_node.fade(1.5).finished
+	print("Finished Level Fade await")
 	EventBus.start_next_level.emit()
-	
+	get_tree().current_scene.call_deferred("add_child", next_level)
+	print("instaniated level", next_level_number)
+	Global.fade_node.fade(0)
 	# TODO: add fancy smanchy scene transitions
 	call_deferred("queue_free")
