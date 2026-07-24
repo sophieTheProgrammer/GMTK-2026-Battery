@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func display_debug_var(name : String, variable : Variant) -> void:
 	# if it is not in the list of vars to update then create a label
 	if name not in debug_vars_to_update.keys():
-		var new_label : Label = Label.new()
+		var new_label : Label 	= Label.new()
 		new_label.text = name + ": " + str(variable)
 		new_label.name = name
 		debug_v_box.add_child(new_label)

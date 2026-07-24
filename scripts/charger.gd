@@ -4,8 +4,9 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("phone"):
 		if body.velocity.y < 0:
-			print("entered charger properly")
+			print("phone entered charger")
 			EventBus.phone_enter_charger.emit(self)
+			print("finished emitted phone_enter_charger")
 
 
 

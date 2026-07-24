@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://das50xyjl30in"]
+
+[node name="next_level" type="Control" unique_id=1956013242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

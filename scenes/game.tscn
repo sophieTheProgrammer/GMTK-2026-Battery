@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://ck17q1kicx35t"]
 
 [ext_resource type="Texture2D" uid="uid://dt00e1pl8rkcu" path="res://art/Wood background.png" id="1_iywne"]
+[ext_resource type="PackedScene" uid="uid://pe0q2r2mcogg" path="res://levels/level_1.tscn" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://ddahf4toxyraj" path="res://scenes/phone.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="4_lbhrr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
-size = Vector2(273, 506)
 
 [node name="game" type="Node2D" unique_id=404250698]
+
+[node name="Level_1" parent="." unique_id=1029799298 instance=ExtResource("1_lbhrr")]
 
 [node name="WoodBackground" type="Sprite2D" parent="." unique_id=1820250660]
 z_index = -2
@@ -17,24 +16,8 @@ scale = Vector2(1.8035368, 1.8035368)
 texture = ExtResource("1_iywne")
 
 [node name="Phone" parent="." unique_id=1811385161 instance=ExtResource("3_lnu2h")]
-position = Vector2(176, 43)
+position = Vector2(502, 638)
 scale = Vector2(1.3, 1.3)
 
 [node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_uwrxv")]
 visible = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1183983615]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1727100051]
-position = Vector2(-645, 822)
-shape = SubResource("RectangleShape2D_h2h35")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1962957068]
-offset_left = -785.0
-offset_top = 568.0
-offset_right = -513.0
-offset_bottom = 1059.0
-color = Color(0.601223, 0.601223, 0.60122293, 1)
-
-[node name="charger" parent="." unique_id=9780923 instance=ExtResource("4_lbhrr")]
-position = Vector2(-383, -449)

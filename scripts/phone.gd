@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var shoot_indicator: Node2D = $shoot_indicator
 @onready var battery_indicator_label: Label = $BatteryIndicatorLabel
 
 # Constants
@@ -20,6 +19,7 @@ enum player_state {
 }
 func _ready() -> void:
 	EventBus.phone_enter_charger.connect(_on_phone_enter_charger)
+	EventBus.start_next_level.connect(_start_next_level)
 	set_battery_level(0)
 var state : player_state = player_state.IDLE
 func _physics_process(delta: float) -> void:
@@ -33,9 +33,8 @@ func _physics_process(delta: float) -> void:
 		player_state.CHARGING:
 			handle_charging(delta)
 	Debug.display_debug_var("state", player_state.find_key(state))
-	Debug.display_debug_var("player velocity", velocity)
-	Debug.display_debug_var("player degrees", int(rotation_degrees))
-		
+	Debug.display_debug_var("player velocity", round(velocity))
+
 	var collision : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
@@ -46,7 +45,6 @@ func handle_idle(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		#current_spin_velocity = 0
 		state = player_state.AIMING
-	Debug.display_debug_var("spin velocity", int(current_spin_velocity))
 
 func handle_aiming(delta : float) -> void:
 	current_spin_velocity = 0
@@ -63,10 +61,13 @@ func handle_launching(delta : float) -> void:
 		state = player_state.IDLE
 
 func handle_charging(delta: float) -> void:
-	velocity = Vector2.ZERO
+	pass
+
+# connects from _on_phone_enter_charger
 func _on_phone_enter_charger(area : Area2D) -> void:
 	state = player_state.CHARGING
-
+	print("CHANGE STATE TO HCARGING")
+	velocity = Vector2.ZERO
 func handle_rotation(delta: float) -> void:
 	var direction := Input.get_axis("right", "left")
 
@@ -79,3 +80,8 @@ func handle_rotation(delta: float) -> void:
 func set_battery_level(amount : int) -> void:
 	battery_level += amount
 	battery_indicator_label.text = str(battery_level)
+
+func _start_next_level() -> void:
+	state = player_state.IDLE
+	print("CHNAGE STATE TO IDLE")
+	position = Vector2.ZERO
