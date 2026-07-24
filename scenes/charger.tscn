@@ -1,24 +1,30 @@
 [gd_scene format=3 uid="uid://bgahbuva8q5in"]
 
 [ext_resource type="Script" uid="uid://cpat0fbgqqdl3" path="res://scripts/charger.gd" id="1_aanbt"]
+[ext_resource type="Texture2D" uid="uid://d3s8rljxlg7eb" path="res://art/Charger.png" id="2_pxnrp"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_aanbt"]
 a = Vector2(171, 10.249985)
-b = Vector2(-5, 12)
+b = Vector2(113, 10.999992)
 
 [node name="charger" type="Area2D" unique_id=9780923]
 script = ExtResource("1_aanbt")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1193843019]
-offset_left = -110.0
-offset_top = -128.0
-offset_right = 105.39189
-offset_bottom = 33.0
-color = Color(1, 1, 0.28627452, 1)
-metadata/_edit_lock_ = true
+[node name="ColorRect2" type="Sprite2D" parent="." unique_id=616490809]
+self_modulate = Color(0, 0, 0, 0.26666668)
+z_index = -1
+position = Vector2(-87.30001, 124.47502)
+scale = Vector2(0.5363614, 0.5363614)
+texture = ExtResource("2_pxnrp")
+
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=1506492489]
+self_modulate = Color(0.8745098, 1, 1, 1)
+position = Vector2(-74.999985, 69.99999)
+scale = Vector2(0.48391467, 0.48391467)
+texture = ExtResource("2_pxnrp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458261700]
-position = Vector2(83, -102)
+position = Vector2(163, -27)
 rotation = 3.1415927
 shape = SubResource("SegmentShape2D_aanbt")
 

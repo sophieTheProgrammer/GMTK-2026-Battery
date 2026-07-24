@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvtiy2y4gi7ge" path="res://scripts/phone.gd" id="1_08mii"]
 [ext_resource type="PackedScene" uid="uid://byhrxl37ca8oa" path="res://scenes/shoot_indicator.tscn" id="2_ewalk"]
-[ext_resource type="Texture2D" uid="uid://dirlk8r85kih7" path="res://art/Phone.png" id="3_eud1m"]
+[ext_resource type="Texture2D" uid="uid://dsq1ebsbklyls" path="res://art/Phone lighter.png" id="3_eud1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
 size = Vector2(61, 106)
@@ -19,7 +19,14 @@ text = "s"
 position = Vector2(-19, -82)
 rotation = 4.712389
 
-[node name="ColorRect" type="Sprite2D" parent="." unique_id=745364182]
+[node name="PhoneSprite2" type="Sprite2D" parent="." unique_id=1871046514]
+modulate = Color(0.16026929, 0.16026929, 0.16026929, 1)
+self_modulate = Color(1, 1, 1, 0.3137255)
+position = Vector2(9, -17)
+scale = Vector2(0.15574965, 0.1557497)
+texture = ExtResource("3_eud1m")
+
+[node name="PhoneSprite" type="Sprite2D" parent="." unique_id=745364182]
 position = Vector2(0, -11)
 scale = Vector2(0.15574965, 0.1557497)
 texture = ExtResource("3_eud1m")
