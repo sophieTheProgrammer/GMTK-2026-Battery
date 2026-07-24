@@ -39,6 +39,33 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.bounce(collision.get_normal())
 func handle_idle(delta: float) -> void:
 	
+	handle_rotation(delta)
+	
+	if Input.is_action_just_pressed("click"):
+		#current_spin_velocity = 0
+		state = player_state.AIMING
+	Debug.display_debug_var("spin velocity", int(current_spin_velocity))
+
+func handle_aiming(delta : float) -> void:
+	handle_rotation(delta)
+	if Input.is_action_just_released("click"):
+		state = player_state.LAUNCHING
+		
+		velocity = SPEED * -Vector2.UP.rotated(rotation)
+
+func handle_launching(delta : float) -> void:
+	handle_rotation(delta)
+	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
+	if abs(velocity.x) < 5 and abs(velocity.y) < 5:
+		#velocity = Vector2.ZERO
+		state = player_state.IDLE
+
+func handle_charging(delta: float) -> void:
+	velocity = Vector2.ZERO
+func _on_phone_enter_charger(area : Area2D) -> void:
+	state = player_state.CHARGING
+
+func handle_rotation(delta: float) -> void:
 	var direction := Input.get_axis("right", "left")
 
 	var target_spin_speed : float = TOP_SPIN_SPEED * direction
@@ -46,25 +73,3 @@ func handle_idle(delta: float) -> void:
 	# you can normally lerp velocity with other properties and just lerp the velocity but spin doesn't have any
 	# once we've updated what spin velocity should be, we can add it to rotation since velocity = change/time and you are applying this change
 	rotation += current_spin_velocity * delta
-	
-	if Input.is_action_just_pressed("click"):
-		current_spin_velocity = 0
-		state = player_state.AIMING
-	Debug.display_debug_var("spin velocity", int(current_spin_velocity))
-
-func handle_aiming(delta : float) -> void:
-	if Input.is_action_just_released("click"):
-		state = player_state.LAUNCHING
-		
-		velocity = SPEED * -Vector2.UP.rotated(rotation)
-
-func handle_launching(delta : float) -> void:
-	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
-	if abs(velocity.x) < 0.5 and abs(velocity.y) < 0.5:
-		velocity = Vector2.ZERO
-		state = player_state.IDLE
-
-func handle_charging(delta: float) -> void:
-	velocity = Vector2.ZERO
-func _on_phone_enter_charger(area : Area2D) -> void:
-	state = player_state.CHARGING

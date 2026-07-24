@@ -20,10 +20,9 @@ position = Vector2(-19, -82)
 rotation = 4.712389
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=745364182]
-position = Vector2(-1, 1)
+position = Vector2(0, -11)
 scale = Vector2(0.15574965, 0.1557497)
 texture = ExtResource("3_eud1m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319360330]
-position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_h2h35")

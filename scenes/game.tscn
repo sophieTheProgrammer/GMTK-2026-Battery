@@ -14,8 +14,9 @@ size = Vector2(273, 506)
 position = Vector2(176, 43)
 
 [node name="Camera2D" type="Camera2D" parent="Phone" unique_id=244447270]
-position = Vector2(-176, -43)
 zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+rotation_smoothing_speed = 100.0
 script = ExtResource("2_yqjtg")
 
 [node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_uwrxv")]
