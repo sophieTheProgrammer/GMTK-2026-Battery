@@ -28,11 +28,5 @@ position = Vector2(163, -27)
 rotation = 3.1415927
 shape = SubResource("SegmentShape2D_aanbt")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1227924544]
-position = Vector2(5, -9)
-scale = Vector2(1, 1.037037)
-color = Color(0.4390491, 0.43904912, 0.43904912, 1)
-polygon = PackedVector2Array(-54, -102, -5, -72.96428, 49, -99)
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dt00e1pl8rkcu" path="res://art/Wood background.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://dkvrwufrtbtty" path="res://scripts/camera_effects.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://ddahf4toxyraj" path="res://scenes/phone.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="4_lbhrr"]
 
@@ -21,13 +20,8 @@ texture = ExtResource("1_iywne")
 position = Vector2(176, 43)
 scale = Vector2(1.3, 1.3)
 
-[node name="Camera2D" type="Camera2D" parent="Phone" unique_id=244447270]
-zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
-rotation_smoothing_speed = 100.0
-script = ExtResource("2_yqjtg")
-
 [node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_uwrxv")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1183983615]
 
