@@ -26,8 +26,8 @@ func _physics_process(delta: float) -> void:
 	match state:
 		player_state.IDLE:
 			handle_idle(delta)
-		player_state.AIMING:
-			handle_aiming(delta)
+		#player_state.AIMING:
+		#	handle_aiming(delta)
 		player_state.LAUNCHING:
 			handle_launching(delta)
 		player_state.CHARGING:
@@ -45,14 +45,16 @@ func handle_idle(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("click"):
 		#current_spin_velocity = 0
-		state = player_state.AIMING
-
+		state = player_state.LAUNCHING
+		velocity = SPEED * -Vector2.UP.rotated(rotation)
+'''
 func handle_aiming(delta : float) -> void:
 	current_spin_velocity = 0
 	if Input.is_action_just_released("click"):
 		state = player_state.LAUNCHING
 		set_battery_level(-1)
 		velocity = SPEED * -Vector2.UP.rotated(rotation)
+'''
 
 func handle_launching(delta : float) -> void:
 	handle_rotation(delta)
