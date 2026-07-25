@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dsq1ebsbklyls" path="res://art/Phone lighter.png" id="3_eud1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
-size = Vector2(61, 106)
+size = Vector2(83, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f8gd"]
+size = Vector2(59, 18)
 
 [node name="Phone" type="CharacterBody2D" unique_id=1811385161 groups=["phone"]]
 script = ExtResource("1_08mii")
@@ -22,6 +25,23 @@ position = Vector2(0, -11)
 scale = Vector2(0.15574965, 0.1557497)
 texture = ExtResource("3_eud1m")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319360330]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_h2h35")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=592704754]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+rotation_smoothing_speed = 100.0
+script = ExtResource("3_8nsb0")
+
+[node name="ChargingPort" type="Area2D" parent="." unique_id=108342827]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChargingPort" unique_id=808754345]
+position = Vector2(-1, 92)
+shape = SubResource("RectangleShape2D_0f8gd")
+
 [node name="BatteryIndicatorLabel" type="Label" parent="." unique_id=1462357997]
 offset_left = -13.0
 offset_top = -35.0
@@ -30,12 +50,3 @@ offset_bottom = 32.0
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319360330]
-shape = SubResource("RectangleShape2D_h2h35")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=592704754]
-zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
-rotation_smoothing_speed = 100.0
-script = ExtResource("3_8nsb0")
