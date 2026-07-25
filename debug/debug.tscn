@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://coirqubf5arsw" path="res://debug/debug.gd" id="1_ikwhb"]
 
 [node name="Debug" type="CanvasLayer" unique_id=287756700 node_paths=PackedStringArray("debug_toggle_btn", "fps_label", "debug_v_box")]
+visible = false
 script = ExtResource("1_ikwhb")
 debug_toggle_btn = NodePath("Control/DebugVBox/DebugToggleLabelHBox/DebugToggle")
 fps_label = NodePath("Control/DebugVBox/FPSLabel")
