@@ -45,9 +45,11 @@ func handle_idle(delta: float) -> void:
 	handle_rotation(delta)
 	
 	if Input.is_action_just_pressed("click"):
-		#current_spin_velocity = 0
+		# Enter Launch state
+		current_spin_velocity = 0
 		state = player_state.LAUNCHING
 		velocity = SPEED * -Vector2.UP.rotated(rotation)
+		set_battery_level(-1)
 '''
 func handle_aiming(delta : float) -> void:
 	current_spin_velocity = 0
@@ -65,7 +67,9 @@ func handle_launching(delta : float) -> void:
 		state = player_state.IDLE
 
 func handle_charging(delta: float) -> void:
-	velocity = Vector2.ZERO
+	#velocity = Vector2.ZERO
+	velocity = velocity.lerp(Vector2.ZERO, 0.6)
+	
 	#position = Vector2.ZERO
 
 # connects from _on_phone_enter_charger

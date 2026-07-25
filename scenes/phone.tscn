@@ -11,6 +11,7 @@ size = Vector2(83, 178)
 size = Vector2(59, 18)
 
 [node name="Phone" type="CharacterBody2D" unique_id=1811385161 groups=["phone"]]
+modulate = Color(1.2387854, 1.275747, 1.3655106, 1)
 script = ExtResource("1_08mii")
 
 [node name="PhoneSprite2" type="Sprite2D" parent="." unique_id=1871046514]

@@ -18,7 +18,7 @@ scale = Vector2(0.5363614, 0.5363614)
 texture = ExtResource("2_pxnrp")
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=1506492489]
-self_modulate = Color(0.8745098, 1, 1, 1)
+self_modulate = Color(0.99802667, 1.1401925, 1.1401925, 1)
 position = Vector2(-74.999985, 69.99999)
 scale = Vector2(0.48391467, 0.48391467)
 texture = ExtResource("2_pxnrp")
