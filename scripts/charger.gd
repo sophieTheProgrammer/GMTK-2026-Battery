@@ -1,4 +1,6 @@
+class_name Charger
 extends Area2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 # WARNING: CHARGER ONLY WORKS FACING DOWN
 '''

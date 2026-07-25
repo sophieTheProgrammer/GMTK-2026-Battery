@@ -4,31 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="1_jirdo"]
 [ext_resource type="Texture2D" uid="uid://wm1xbo7mvaay" path="res://art/Tutorial art.png" id="3_bt44k"]
 [ext_resource type="Texture2D" uid="uid://cpdtlrdt7mtnc" path="res://art/Wall.png" id="4_kx6l7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
-size = Vector2(641.5, 1153)
+[ext_resource type="PackedScene" uid="uid://cacjewqea058d" path="res://scenes/water_bottle.tscn" id="5_n46q3"]
 
 [node name="Level_1" type="Node2D" unique_id=1029799298 groups=["level"]]
 script = ExtResource("1_bt44k")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_jirdo")]
-position = Vector2(-224, -813)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1866294068]
-position = Vector2(-343.00003, -322)
-rotation = 1.5641887
-scale = Vector2(0.26340196, 1.7738111)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=895088896]
-position = Vector2(-152, 239)
-shape = SubResource("RectangleShape2D_h2h35")
-
-[node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=85945958]
-offset_left = -447.0
-offset_top = -329.0
-offset_right = 131.0
-offset_bottom = 800.0
-color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+position = Vector2(-65, -1122)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=583778218]
 position = Vector2(-214, -267)
@@ -54,3 +36,9 @@ texture = ExtResource("4_kx6l7")
 position = Vector2(-55.999996, -274.00006)
 rotation = 3.15381
 texture = ExtResource("4_kx6l7")
+
+[node name="Water Bottle" parent="." unique_id=538406549 instance=ExtResource("5_n46q3")]
+position = Vector2(-369, -330.99997)
+rotation = 1.619971
+scale = Vector2(0.8806679, 1.1591192)
+skew = -0.00034618378

@@ -27,3 +27,15 @@ func _on_phone_enter_charger(area : Area2D) -> void:
 	Global.fade_node.fade(0)
 	# TODO: add fancy smanchy scene transitions
 	call_deferred("queue_free")
+func get_next_level_path() -> String:
+	var node_name : String = get_tree().get_first_node_in_group("level").name
+	var next_level_number : int = node_name.to_int() + 1
+	var current_level_number : String = str(node_name.to_int())
+	
+	
+	var next_level_path : String = LEVEL_PATH + str(next_level_number) + ".tscn"
+	if !next_level_path:
+		print("no more levels to load")
+		return current_level_number
+	return next_level_path
+	

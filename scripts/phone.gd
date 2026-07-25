@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var battery_indicator_label: Label = $BatteryIndicatorLabel
+@onready var charging_port: Area2D = $ChargingPort
 
 # Constants
 const TOP_SPIN_SPEED := 10.0
@@ -10,7 +11,7 @@ const DECELERATION : = 800.0
 
 var current_spin_velocity : float = 0.0
 var battery_level : int = 20
-
+var charger_pos : Vector2
 enum player_state {
 	IDLE,
 	AIMING,
@@ -69,14 +70,18 @@ func handle_launching(delta : float) -> void:
 func handle_charging(delta: float) -> void:
 	#velocity = Vector2.ZERO
 	velocity = velocity.lerp(Vector2.ZERO, 0.6)
-	
+	position = charging_port.global_position.lerp(charger_pos,0.5)
+	#rotation_degrees = lerp(rotation_degrees, 180.0, 0.1)
 	#position = Vector2.ZERO
 
 # connects from _on_phone_enter_charger
 func _on_phone_enter_charger(area : Area2D) -> void:
 	state = player_state.CHARGING
+	AudioPlayer.play_sfx(AudioPlayer.CHARGING_SFX)
 	print("CHANGE STATE TO CHARGING")
 	
+	if area is Charger:
+		charger_pos = area.collision_shape_2d.global_position
 func handle_rotation(delta: float) -> void:
 	var direction := Input.get_axis("right", "left")
 

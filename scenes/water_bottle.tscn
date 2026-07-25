@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cacjewqea058d"]
+
+[ext_resource type="Texture2D" uid="uid://byau3lsrgpbgl" path="res://art/water bottle.png" id="1_lnc1p"]
+
+[node name="Water Bottle" type="StaticBody2D" unique_id=538406549]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1704709268]
+modulate = Color(0, 0, 0, 0.34901962)
+visibility_layer = 33
+z_index = -1
+position = Vector2(-35, 30)
+texture = ExtResource("1_lnc1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1359787460]
+texture = ExtResource("1_lnc1p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1638805822]
+polygon = PackedVector2Array(-46, -350, 46, -351, 116, -272, 106, 367, -142, 363, -125, -262)
