@@ -21,6 +21,7 @@ func _ready() -> void:
 	EventBus.phone_enter_charger.connect(_on_phone_enter_charger)
 	EventBus.start_next_level.connect(_start_next_level)
 	set_battery_level(0)
+	self.position = Vector2.ZERO
 var state : player_state = player_state.IDLE
 func _physics_process(delta: float) -> void:
 	match state:

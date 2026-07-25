@@ -10,9 +10,12 @@ size = Vector2(641.5, 1153)
 script = ExtResource("1_bt44k")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_jirdo")]
-position = Vector2(528, -429)
+position = Vector2(-224, -813)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1866294068]
+position = Vector2(-343.00003, -322)
+rotation = 1.5641887
+scale = Vector2(0.26340196, 1.7738111)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=895088896]
 position = Vector2(-152, 239)
@@ -21,15 +24,16 @@ shape = SubResource("RectangleShape2D_h2h35")
 [node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=85945958]
 offset_left = -447.0
 offset_top = -329.0
-offset_right = 144.0
+offset_right = 131.0
 offset_bottom = 800.0
 color = Color(0.45840502, 0.45840508, 0.45840502, 1)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=583778218]
+position = Vector2(-214, -267)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2" unique_id=200263676]
 color = Color(0.57700837, 0.5770084, 0.57700837, 1)
-polygon = PackedVector2Array(-981, -573, -981, -1411, 2244, -1456, 2182, -348, 1339, -383, 1326, -835, -125, -819)
+polygon = PackedVector2Array(1028, -974, -635, -989, -653, 710, 2141, 713, 2603, 1655, -1588, 1490, -1559, -2223, 3233, -2189, 3141, 1135, 3120, 1721, 1028, 1823)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=2055344112]
-polygon = PackedVector2Array(-981, -573, -981, -1411, 2244, -1456, 2182, -348, 1339, -383, 1326, -835, -125, -819)
+polygon = PackedVector2Array(1028, -974, -635, -989, -653, 710, 2141, 713, 2603, 1655, -1588, 1490, -1559, -2223, 3233, -2189, 3141, 1135, 3120, 1721, 1028, 1823)

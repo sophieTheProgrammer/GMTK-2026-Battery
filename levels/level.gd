@@ -4,7 +4,7 @@ const LEVEL_PATH : String = "res://levels/level_"
 
 func _ready() -> void:
 	EventBus.phone_enter_charger.connect(_on_phone_enter_charger)
-	
+	self.position = Vector2.ZERO
 	
 func _on_phone_enter_charger(area : Area2D) -> void:
 	var node_name : String = get_tree().get_first_node_in_group("level").name
