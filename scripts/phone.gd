@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var battery_indicator_label: Label = $BatteryIndicatorLabel
 @onready var charging_port: Area2D = $ChargingPort
+@onready var phone_sprite: AnimatedSprite2D = $PhoneSprite
 
 # Constants
 const TOP_SPIN_SPEED := 7.0
@@ -10,9 +11,10 @@ const SPEED := 1400.0
 const DECELERATION : = 1000.0
 
 var current_spin_velocity : float = 0.0
-var current_battery_level : int = 2
+var current_battery_level : int = 20
 const BATTERY_LEVEL : int = 5
 var charger_pos : Vector2
+
 enum player_state {
 	IDLE,
 	AIMING,
@@ -72,6 +74,7 @@ func handle_launching(delta : float) -> void:
 
 func handle_charging(delta: float) -> void:
 	#velocity = Vector2.ZERO
+	phone_sprite.play("charging")
 	velocity = velocity.lerp(Vector2.ZERO, 0.6)
 	position = charging_port.global_position.lerp(charger_pos,0.5)
 	#rotation_degrees = lerp(rotation_degrees, 180.0, 0.1)
@@ -104,6 +107,7 @@ func set_current_battery_level(amount : int) -> void:
 	#battery_indicator_label.text = str(current_battery_level)
 	EventBus.battery_changed.emit(current_battery_level)
 func _start_next_level() -> void:
+	phone_sprite.play("low")
 	position = Vector2.ZERO
 	velocity = Vector2.ZERO
 	state = player_state.IDLE
