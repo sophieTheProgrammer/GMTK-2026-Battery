@@ -2,36 +2,34 @@
 
 [ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="1_mi4ay"]
 [ext_resource type="Script" uid="uid://h0xbq1bkej5b" path="res://levels/level.gd" id="1_pqqg8"]
+[ext_resource type="PackedScene" uid="uid://cv0uk5fb6kjgj" path="res://scenes/book.tscn" id="3_0srwa"]
+[ext_resource type="Texture2D" uid="uid://cpdtlrdt7mtnc" path="res://art/Wall.png" id="4_v5uil"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
-size = Vector2(641.5, 1153)
-
-[node name="Level_1" type="Node2D" unique_id=1029799298]
+[node name="Level_2" type="Node2D" unique_id=1029799298 groups=["level"]]
 script = ExtResource("1_pqqg8")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_mi4ay")]
-position = Vector2(528, -429)
+position = Vector2(48, -1152)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1866294068]
+[node name="Book" parent="." unique_id=1592156743 instance=ExtResource("3_0srwa")]
+position = Vector2(-233, -336)
+rotation = 1.556212
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=895088896]
-position = Vector2(-1027, -45)
-rotation = 1.5777776
-shape = SubResource("RectangleShape2D_h2h35")
+[node name="Book2" parent="." unique_id=2131555308 instance=ExtResource("3_0srwa")]
+position = Vector2(324.99997, -628)
+rotation = 2.3042445
+metadata/_edit_group_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=85945958]
-offset_left = -447.0
-offset_top = -329.0
-offset_right = 144.0
-offset_bottom = 800.0
-rotation = 1.5777776
-color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+[node name="Wall" type="Sprite2D" parent="." unique_id=451196568]
+position = Vector2(319, -532)
+texture = ExtResource("4_v5uil")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=583778218]
+[node name="Wall2" type="Sprite2D" parent="." unique_id=639895009]
+position = Vector2(-166, -440.0001)
+rotation = -3.1377606
+texture = ExtResource("4_v5uil")
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2" unique_id=200263676]
-color = Color(0.57700837, 0.5770084, 0.57700837, 1)
-polygon = PackedVector2Array(-981, -573, -981, -1411, 2244, -1456, 2215, -847, 1359, -740, 1326, -835, -125, -819)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1156610915]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=2055344112]
-polygon = PackedVector2Array(-981, -573, -981, -1411, 2244, -1456, 2229, -954, 1773, -721, 1326, -835, -125, -819)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=149763307]
+polygon = PackedVector2Array(-571, 269, -520, -1274, 710, -1270, 692, 720, 1819, 853, 1592, -1803, -1428, -1726, -1414, 867, 878, 1025, 1247, 1006, 688, 299)

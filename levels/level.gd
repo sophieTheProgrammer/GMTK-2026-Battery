@@ -7,8 +7,7 @@ func _ready() -> void:
 	self.position = Vector2.ZERO
 	
 func _on_phone_enter_charger(area : Area2D) -> void:
-	var node_name : String = get_tree().get_first_node_in_group("level").name
-	var next_level_number : int = node_name.to_int() + 1
+	var next_level_number : int = self.name.to_int() + 1
 	
 	var next_level_path : String = LEVEL_PATH + str(next_level_number) + ".tscn"
 	if !next_level_path:

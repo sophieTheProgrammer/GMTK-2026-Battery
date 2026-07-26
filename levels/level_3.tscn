@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2h35"]
 size = Vector2(641.5, 1153)
 
-[node name="Level_1" type="Node2D" unique_id=1029799298]
+[node name="Level_3" type="Node2D" unique_id=1029799298 groups=["level"]]
 script = ExtResource("1_hldmh")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("2_gew73")]
