@@ -3,13 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://bxdqb45h0ow5w" path="res://scripts/ui/ui.gd" id="1_x4jx1"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_h2h35"]
+font_size = 48
+font_color = Color(0.8156053, 0.8712386, 0.90065926, 1)
+outline_size = 16
+outline_color = Color(0.4745098, 0.31764707, 0.1882353, 1)
+
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
 script = ExtResource("1_x4jx1")
 
 [node name="Fade" parent="." unique_id=383164694 instance=ExtResource("1_nt7q6")]
 visible = false
 
-[node name="BatteryLabel" type="RichTextLabel" parent="." unique_id=843759825]
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
+[node name="BatteryLabel" type="Label" parent="." unique_id=1146983773]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_right = 120.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "BATTERY: 10%"
+label_settings = SubResource("LabelSettings_h2h35")

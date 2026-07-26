@@ -1,35 +1,57 @@
-[gd_scene format=3 uid="uid://c65bss8nw86wa"]
+[gd_scene format=3 uid="uid://8vjhb0tvcq8e"]
 
 [ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="1_mi4ay"]
 [ext_resource type="Script" uid="uid://h0xbq1bkej5b" path="res://levels/level.gd" id="1_pqqg8"]
-[ext_resource type="PackedScene" uid="uid://cv0uk5fb6kjgj" path="res://scenes/book.tscn" id="3_0srwa"]
+[ext_resource type="PackedScene" uid="uid://cacjewqea058d" path="res://scenes/water_bottle.tscn" id="4_5722l"]
 [ext_resource type="Texture2D" uid="uid://cpdtlrdt7mtnc" path="res://art/Wall.png" id="4_v5uil"]
 
-[node name="Level_2" type="Node2D" unique_id=1029799298 groups=["level"]]
+[node name="Level_3" type="Node2D" unique_id=1029799298 groups=["level"]]
 script = ExtResource("1_pqqg8")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_mi4ay")]
-position = Vector2(48, -1152)
+position = Vector2(22, -1438)
 
-[node name="Book" parent="." unique_id=1592156743 instance=ExtResource("3_0srwa")]
-position = Vector2(-233, -336)
-rotation = 1.556212
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1905628051]
+position = Vector2(-30, -627.99994)
+rotation = 1.5499831
+scale = Vector2(1.479998, 1.479998)
+color = Color(0.52156866, 0.3529412, 0.20784314, 1)
+polygon = PackedVector2Array(-846.9633, 624.4013, 947.0753, 604.97723, 967.06647, -647.5825, -1296.5198, -505.4713, -953.8979, -2062.8696, 1668.7075, -2017.7384, 1901.001, 1822.3927, -2089.8606, 1893.406, -2026.9343, -2006.1348, -1024.4766, -2048.795)
 
-[node name="Book2" parent="." unique_id=2131555308 instance=ExtResource("3_0srwa")]
-position = Vector2(324.99997, -628)
-rotation = 2.3042445
-metadata/_edit_group_ = true
-
-[node name="Wall" type="Sprite2D" parent="." unique_id=451196568]
-position = Vector2(319, -532)
+[node name="Wall" type="Sprite2D" parent="." unique_id=766448291]
+position = Vector2(-61, -583)
+rotation = -1.5799093
+scale = Vector2(1.1658103, 1.0000355)
+skew = 0.0069742203
 texture = ExtResource("4_v5uil")
 
-[node name="Wall2" type="Sprite2D" parent="." unique_id=639895009]
-position = Vector2(-166, -440.0001)
-rotation = -3.1377606
+[node name="Wall2" type="Sprite2D" parent="." unique_id=195355752]
+position = Vector2(-42.000008, -576)
+rotation = 1.5646089
+scale = Vector2(1.1489221, 1.1045816)
+skew = -0.0027223825
 texture = ExtResource("4_v5uil")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1156610915]
+[node name="Wall3" type="Sprite2D" parent="." unique_id=1520862145]
+position = Vector2(-1423.0002, -2932.0002)
+rotation = 4.713648
+scale = Vector2(1.1489221, 1.1045816)
+skew = -0.0027223825
+texture = ExtResource("4_v5uil")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=149763307]
-polygon = PackedVector2Array(-571, 269, -520, -1274, 710, -1270, 692, 720, 1819, 853, 1592, -1803, -1428, -1726, -1414, 867, 878, 1025, 1247, 1006, 688, 299)
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1948737341]
+position = Vector2(1402.0001, -2796.9998)
+rotation = -1.5695375
+scale = Vector2(1.0856413, -1.1351191)
+skew = -0.0027223825
+texture = ExtResource("4_v5uil")
+
+[node name="Water Bottle" parent="." unique_id=538406549 instance=ExtResource("4_5722l")]
+position = Vector2(-67, -699.99994)
+rotation = 1.5499831
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=583778218]
+position = Vector2(-512, -839)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=2055344112]
+polygon = PackedVector2Array(1292, -807, 1288, 1279, -325, 1217, -314.6053, -514.5885, 219, -527, 238, -739, 748, -742, 745, -449, 1295, -452, 1246, -1410, -737, -1331, -579, 1836, 1649, 1882, 1624, -1368, 1249, -1506)

@@ -10,8 +10,8 @@ func _on_phone_enter_charger(area : Area2D) -> void:
 	var next_level_number : int = self.name.to_int() + 1
 	
 	var next_level_path : String = LEVEL_PATH + str(next_level_number) + ".tscn"
-	if !next_level_path:
-		print("no more levels to load")
+	if !load(next_level_path):
+		print("no more levels to load", next_level_path, "name", name)
 		return
 	
 	var next_level : Node = load(next_level_path).instantiate()
