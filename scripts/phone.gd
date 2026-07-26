@@ -4,13 +4,13 @@ extends CharacterBody2D
 @onready var charging_port: Area2D = $ChargingPort
 
 # Constants
-const TOP_SPIN_SPEED := 10.0
+const TOP_SPIN_SPEED := 7.0
 const SPIN_ACCELERATION := 5.0
-const SPEED := 1200.0
-const DECELERATION : = 800.0
+const SPEED := 1400.0
+const DECELERATION : = 1000.0
 
 var current_spin_velocity : float = 0.0
-var current_battery_level : int = 10
+var current_battery_level : int = 2
 const BATTERY_LEVEL : int = 5
 var charger_pos : Vector2
 enum player_state {
@@ -51,6 +51,9 @@ func handle_idle(delta: float) -> void:
 		state = player_state.LAUNCHING
 		velocity = SPEED * -Vector2.UP.rotated(rotation)
 		add_current_battery_level(-1)
+	elif current_battery_level == 0:
+		#Global.fade_node.fade(1.5)
+		_start_next_level()
 '''
 func handle_aiming(delta : float) -> void:
 	current_spin_velocity = 0
@@ -63,8 +66,6 @@ func handle_aiming(delta : float) -> void:
 func handle_launching(delta : float) -> void:
 	handle_rotation(delta)
 	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
-	if current_battery_level == 0:
-		_start_next_level()
 	if abs(velocity.x) < 5 and abs(velocity.y) < 5:
 		#velocity = Vector2.ZERO
 		state = player_state.IDLE
