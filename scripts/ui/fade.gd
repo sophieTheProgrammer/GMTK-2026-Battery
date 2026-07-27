@@ -6,6 +6,7 @@ extends CanvasLayer
 func _ready() -> void:
 	color_rect.modulate.a = 0
 	Global.fade_node = self
+	print(Global.fade_node)
 	show()
 func fade(alpha_target : float, duration : float = 1.5) -> Tween:
 	# alpha target most be between 0 and 1

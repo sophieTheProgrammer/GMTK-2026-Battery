@@ -13,7 +13,6 @@ outline_color = Color(0.4745098, 0.31764707, 0.1882353, 1)
 script = ExtResource("1_x4jx1")
 
 [node name="Fade" parent="." unique_id=383164694 instance=ExtResource("1_nt7q6")]
-visible = false
 
 [node name="BatteryLabel" type="Label" parent="." unique_id=1146983773]
 anchors_preset = 5
