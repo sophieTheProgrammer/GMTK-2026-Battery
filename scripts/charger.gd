@@ -1,6 +1,7 @@
 class_name Charger
 extends Area2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+signal phone_enter_charger
 
 # WARNING: CHARGER ONLY WORKS FACING DOWN
 '''
@@ -15,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if Global.DEBUG_EASY_WIN or area.get_parent().velocity.y < 0:
 		print("phone entered charger")
-		EventBus.phone_enter_charger.emit(self)
+		phone_enter_charger.emit(self)
 		print("finished emitted phone_enter_charger")
 		set_deferred("monitoring", false)
 

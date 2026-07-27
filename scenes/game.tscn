@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dt00e1pl8rkcu" path="res://art/Wood background.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://pe0q2r2mcogg" path="res://levels/level_1.tscn" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://be4w7gvuy45ip" path="res://scripts/level_manager.gd" id="1_p57ef"]
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://ddahf4toxyraj" path="res://scenes/phone.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://8vjhb0tvcq8e" path="res://levels/level_2.tscn" id="3_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c65bss8nw86wa" path="res://levels/level_3.tscn" id="4_gee14"]
 
 [sub_resource type="Environment" id="Environment_h2h35"]
 background_mode = 3
@@ -15,7 +18,9 @@ adjustment_saturation = 1.08
 
 [node name="game" type="Node2D" unique_id=404250698]
 
-[node name="Level_1" parent="." unique_id=1029799298 instance=ExtResource("1_lbhrr")]
+[node name="LevelManager" type="Node2D" parent="." unique_id=712661078]
+script = ExtResource("1_p57ef")
+levels = Array[PackedScene]([ExtResource("1_lbhrr"), ExtResource("3_u5sy4"), ExtResource("4_gee14")])
 
 [node name="WoodBackground" type="Sprite2D" parent="." unique_id=1820250660]
 self_modulate = Color(0.9020199, 0.9506138, 0.9506138, 1)
