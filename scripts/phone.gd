@@ -19,11 +19,12 @@ enum player_state {
 	IDLE,
 	AIMING,
 	LAUNCHING,
-	CHARGING
+	CHARGING,
+	OUT_OF_BATTERY
 }
 func _ready() -> void:
 	EventBus.phone_enter_charger.connect(_on_phone_enter_charger)
-	EventBus.start_next_level.connect(_start_next_level)
+	EventBus.start_next_level.connect(reset_for_level)
 	self.position = Vector2.ZERO
 	add_current_battery_level(0)
 var state : player_state = player_state.IDLE
@@ -38,8 +39,6 @@ func _physics_process(delta: float) -> void:
 		player_state.CHARGING:
 			handle_charging(delta)
 	Debug.display_debug_var("state", player_state.find_key(state))
-	Debug.display_debug_var("player velocity", round(velocity))
-	Debug.display_debug_var("position", position)
 	var collision : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
@@ -55,7 +54,8 @@ func handle_idle(delta: float) -> void:
 		add_current_battery_level(-1)
 	elif current_battery_level == 0:
 		#Global.fade_node.fade(1.5)
-		_start_next_level()
+		AudioPlayer.play_sfx(AudioPlayer.LOW_POWER_WARNING)
+		reset_for_level()
 '''
 func handle_aiming(delta : float) -> void:
 	current_spin_velocity = 0
@@ -106,10 +106,11 @@ func set_current_battery_level(amount : int) -> void:
 	current_battery_level = amount
 	#battery_indicator_label.text = str(current_battery_level)
 	EventBus.battery_changed.emit(current_battery_level)
-func _start_next_level() -> void:
+
+func reset_for_level() -> void:
 	phone_sprite.play("low")
 	position = Vector2.ZERO
 	velocity = Vector2.ZERO
-	state = player_state.IDLE
 	print("CHNAGE STATE TO IDLE")
 	set_current_battery_level(BATTERY_LEVEL)
+	state = player_state.IDLE

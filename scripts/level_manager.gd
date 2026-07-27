@@ -5,11 +5,10 @@ var current_level_index : int = 0
 var current_charger : Charger
 var current_level : Node
 
-
 func _ready() -> void:
 	_load_level(0)
 
-
+# listen to signal from child to start new level here
 func _on_phone_enter_charger(area: Area2D) -> void:
 	EventBus.start_next_level.emit()
 	print("emitted start_next_level")
@@ -23,8 +22,8 @@ func _load_level(level_number : int) -> void:
 	
 	if current_level:
 		current_level.queue_free.call_deferred()
-	if levels[current_level_index]:
-		level = levels[current_level_index].instantiate()
+	if levels[level_number]:
+		level = levels[level_number].instantiate()
 		add_child.call_deferred(level)
 	else:
 		printerr("no more levels")
