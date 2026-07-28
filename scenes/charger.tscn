@@ -24,14 +24,18 @@ scale = Vector2(0.48391467, 0.48391467)
 texture = ExtResource("2_pxnrp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458261700]
+visible = false
 position = Vector2(-65, 217)
 rotation = -3.1415925
 shape = SubResource("RectangleShape2D_x4jx1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1404524185]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=372031190]
-polygon = PackedVector2Array(-51, 195, -51, 86, 2, 18, 31, -90, 82, -95, 82, -121, -31, -124, -32, -107, 17, -93, -5, 0, -62, 67, -62, -33, -131, -66, -179, -60, -198, 0, -197, 78, -164, 107, -71, 83, -75, 196)
+visible = false
+polygon = PackedVector2Array(-22, 192, -23, 173, -52, 171, -51, 86, 2, 18, 31, -90, 82, -95, 82, -121, -31, -124, -32, -107, 17, -93, -5, 0, -62, 67, -71, 83, -71, 169, -103, 173, -109, 194)
+disabled = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

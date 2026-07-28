@@ -14,24 +14,23 @@ func _on_phone_recieved(area: Area2D) -> void:
 	current_level_index += 1
 	# we can do additional checks if the level was really completed here
 	EventBus.level_completed.emit(current_level_index)
+	await Global.fade_node.fade(1).finished
+
 	_load_level(current_level_index)
+	
+	EventBus.start_next_level.emit()
+	Global.fade_node.fade(0)
 
-
+	
 func _load_level(level_number : int) -> void:
 	var level : Node
 	
 	if current_level:
-		print("awaiting")
-		await Global.fade_node.fade(1).finished
-		print("awaited")
-		current_level.queue_free.call_deferred()
-		EventBus.start_next_level.emit()
-		print("emit start_next_level")
+		current_level.queue_free()
+
 	if levels[level_number]:
 		level = levels[level_number].instantiate()
 		add_child.call_deferred(level)
-		if Global.fade_node:
-			Global.fade_node.fade(0).finished
 	else:
 		printerr("no more levels")
 	

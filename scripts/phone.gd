@@ -78,7 +78,6 @@ func handle_charging(delta: float) -> void:
 	velocity = velocity.lerp(Vector2.ZERO, 0.6)
 	#position = charging_port.global_position.lerp(charger_pos,0.5)
 	#rotation_degrees = lerp(rotation_degrees, 180.0, 0.1)
-	#position = Vector2.ZERO
 
 func _on_level_completed(number : int) -> void:
 	state = player_state.CHARGING

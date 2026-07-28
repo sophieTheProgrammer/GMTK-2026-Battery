@@ -16,16 +16,13 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if Global.DEBUG_EASY_WIN or area.get_parent().velocity.y < 0:
 		phone_recieved.emit(self)
-		set_deferred("monitoring", false)
 
 
 func _ready() -> void:
-	monitoring = false
-	await get_tree().create_timer(1.0).timeout
-	monitoring = true
+
 	#var entry_vector : Vector2 = global_position.direction_to(body.global_position)
 	#print(entry_vector)
-	
+	pass
 	# if it entred the range of 180
 	#print(entry_vector.dot(Vector2.UP))
 	#if entry_vector.dot(Vector2.UP) > 0:

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4irt31thm3aa"]
+
+[ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="1_3271u"]
+
+[node name="ChargerTest" type="Node2D" unique_id=939822944]
+
+[node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_3271u")]
+position = Vector2(-228, -726)
+
+[node name="charger2" parent="." unique_id=486129028 instance=ExtResource("1_3271u")]
+position = Vector2(859, 47)
+rotation = 1.563815

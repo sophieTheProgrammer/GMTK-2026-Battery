@@ -9,49 +9,53 @@
 script = ExtResource("1_pqqg8")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_mi4ay")]
-position = Vector2(22, -1438)
+position = Vector2(10.000488, -1636.416)
 
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1905628051]
-position = Vector2(-30, -627.99994)
+position = Vector2(-41.99951, -826.416)
 rotation = 1.5499831
 scale = Vector2(1.479998, 1.479998)
 color = Color(0.52156866, 0.3529412, 0.20784314, 1)
 polygon = PackedVector2Array(-846.9633, 624.4013, 947.0753, 604.97723, 967.06647, -647.5825, -1296.5198, -505.4713, -953.8979, -2062.8696, 1668.7075, -2017.7384, 1901.001, 1822.3927, -2089.8606, 1893.406, -2026.9343, -2006.1348, -1024.4766, -2048.795)
 
 [node name="Wall" type="Sprite2D" parent="." unique_id=766448291]
-position = Vector2(-61, -583)
+position = Vector2(-72.99951, -781.416)
 rotation = -1.5799093
 scale = Vector2(1.1658103, 1.0000355)
 skew = 0.0069742203
 texture = ExtResource("4_v5uil")
 
 [node name="Wall2" type="Sprite2D" parent="." unique_id=195355752]
-position = Vector2(-42.000008, -576)
+position = Vector2(-53.99952, -774.416)
 rotation = 1.5646089
 scale = Vector2(1.1489221, 1.1045816)
 skew = -0.0027223825
 texture = ExtResource("4_v5uil")
 
 [node name="Wall3" type="Sprite2D" parent="." unique_id=1520862145]
-position = Vector2(-1423.0002, -2932.0002)
+position = Vector2(-1434.9998, -3130.4163)
 rotation = 4.713648
 scale = Vector2(1.1489221, 1.1045816)
 skew = -0.0027223825
 texture = ExtResource("4_v5uil")
 
 [node name="Wall4" type="Sprite2D" parent="." unique_id=1948737341]
-position = Vector2(1402.0001, -2796.9998)
+position = Vector2(1390.0006, -2995.4158)
 rotation = -1.5695375
 scale = Vector2(1.0856413, -1.1351191)
 skew = -0.0027223825
 texture = ExtResource("4_v5uil")
 
 [node name="Water Bottle" parent="." unique_id=538406549 instance=ExtResource("4_5722l")]
-position = Vector2(-67, -699.99994)
+position = Vector2(-458.9995, -997.41595)
+rotation = 1.5499831
+
+[node name="Water Bottle2" parent="." unique_id=1862851321 instance=ExtResource("4_5722l")]
+position = Vector2(485.00046, -415.41602)
 rotation = 1.5499831
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=583778218]
-position = Vector2(-512, -839)
+position = Vector2(-523.9995, -1037.416)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=2055344112]
 polygon = PackedVector2Array(1292, -807, 1288, 1279, -325, 1217, -314.6053, -514.5885, 219, -527, 238, -739, 748, -742, 745, -449, 1295, -452, 1246, -1410, -737, -1331, -579, 1836, 1649, 1882, 1624, -1368, 1249, -1506)

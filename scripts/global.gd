@@ -9,4 +9,4 @@ const TUTORIAL = preload("res://scenes/cutscene_tutorial.tscn")
 var fade_node : CanvasLayer
 var debug_mode : bool = true
 
-const DEBUG_EASY_WIN : bool = true
+const DEBUG_EASY_WIN : bool = false

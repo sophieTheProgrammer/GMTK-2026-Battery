@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c2bhh13q5q8rf"]
+
+[ext_resource type="Script" uid="uid://h0xbq1bkej5b" path="res://levels/level.gd" id="1_t0qhu"]
+[ext_resource type="PackedScene" uid="uid://bgahbuva8q5in" path="res://scenes/charger.tscn" id="2_t6q73"]
+[ext_resource type="PackedScene" uid="uid://cv0uk5fb6kjgj" path="res://scenes/book.tscn" id="3_hokjj"]
+[ext_resource type="Texture2D" uid="uid://cpdtlrdt7mtnc" path="res://art/Wall.png" id="4_0fd8o"]
+[ext_resource type="PackedScene" uid="uid://cacjewqea058d" path="res://scenes/water_bottle.tscn" id="5_t6q73"]
+
+[node name="Level_3" type="Node2D" unique_id=1029799298 groups=["level"]]
+script = ExtResource("1_t0qhu")
+
+[node name="charger" parent="." unique_id=9780923 instance=ExtResource("2_t6q73")]
+position = Vector2(775, -1148)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=113051776]
+position = Vector2(93, 298)
+color = Color(0.49411765, 0.32941177, 0.19607843, 1)
+polygon = PackedVector2Array(-958, -1539, -919, 267, 1168, 298, 1065, -1434, 2167, -2566, 3289, 2638, -3125, 2359, -2949, -2685, -1008, -2781, 2175, -2534, 1594, -1476)
+
+[node name="Book2" parent="." unique_id=1786726426 instance=ExtResource("3_hokjj")]
+position = Vector2(256.99994, -768.99994)
+rotation = 1.556212
+
+[node name="Book3" parent="." unique_id=2088790106 instance=ExtResource("3_hokjj")]
+position = Vector2(685.00006, -285)
+rotation = 1.556212
+
+[node name="Book4" parent="." unique_id=1592156743 instance=ExtResource("3_hokjj")]
+position = Vector2(684.99994, -386)
+rotation = 1.8619496
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=451196568]
+position = Vector2(316, -543)
+texture = ExtResource("4_0fd8o")
+
+[node name="Wall2" type="Sprite2D" parent="." unique_id=639895009]
+z_index = -1
+position = Vector2(71.000015, -395.00006)
+rotation = -3.1377606
+texture = ExtResource("4_0fd8o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1156610915]
+position = Vector2(93, 298)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=149763307]
+visible = false
+polygon = PackedVector2Array(-659, 25, -639, -1543, 852, -1518, 847, 41, 1819, 853, 1562, -2256, -1312, -2681, -1414, 867, 878, 1025, 1709, 601, 1054, 60)
+
+[node name="Water Bottle2" parent="." unique_id=320770307 instance=ExtResource("5_t6q73")]
+position = Vector2(355, -489)
