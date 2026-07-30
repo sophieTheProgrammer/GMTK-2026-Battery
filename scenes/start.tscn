@@ -1,44 +1,83 @@
 [gd_scene format=3 uid="uid://cjulv74qj1553"]
 
 [ext_resource type="Script" uid="uid://bpq6m57xt5yl2" path="res://scripts/ui/start_screen.gd" id="1_jaeev"]
+[ext_resource type="PackedScene" uid="uid://1oudns23ey8i" path="res://scenes/settings.tscn" id="2_u80x2"]
+[ext_resource type="Texture2D" uid="uid://dt00e1pl8rkcu" path="res://art/Wood background.png" id="2_y16t7"]
+[ext_resource type="LabelSettings" uid="uid://qcdrqvct7ckn" path="res://Label.tres" id="3_0auqf"]
+[ext_resource type="Texture2D" uid="uid://dahr83rbtwra7" path="res://art/Charging phone.png" id="3_kdmts"]
+[ext_resource type="Texture2D" uid="uid://du3q8ch6mlr2p" path="res://art/Phone update.png" id="4_0auqf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y16t7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kdmts")
+}],
+"loop": 1,
+"name": &"charging",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0auqf")
+}],
+"loop": 1,
+"name": &"low",
+"speed": 5.0
+}]
 
 [node name="start" type="Node2D" unique_id=1507737572]
 script = ExtResource("1_jaeev")
 
+[node name="WoodBackground" type="Sprite2D" parent="." unique_id=997132622]
+modulate = Color(0.9079417, 0.9079417, 0.90794164, 1)
+position = Vector2(568.99994, 283.99994)
+scale = Vector2(0.45978683, 0.45978683)
+texture = ExtResource("2_y16t7")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1354601927]
 
-[node name="StartScreenTutorialButton" type="Button" parent="CanvasLayer" unique_id=688141163]
-anchors_preset = -1
-anchor_top = -0.16820988
-anchor_right = 0.2847222
-offset_left = 290.0
-offset_top = 380.0
-offset_right = 462.0
-offset_bottom = 445.0
-text = "tutorial"
-metadata/_edit_use_anchors_ = true
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1438164271]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 50
 
-[node name="StartScreenStartButton" type="Button" parent="CanvasLayer" unique_id=622851497]
-offset_left = 419.0
-offset_top = 513.0
-offset_right = 683.0
-offset_bottom = 604.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=223321937]
+custom_minimum_size = Vector2(50, 500)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="StartTitle" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=337100660]
+layout_mode = 2
+text = "LOW POWER MODE"
+label_settings = ExtResource("3_0auqf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartScreenStartButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=622851497]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 text = "quickstart"
 
-[node name="StartScreenSettingsButton" type="Button" parent="CanvasLayer" unique_id=993410638]
-offset_left = 876.0
-offset_top = 7.0
-offset_right = 1140.0
-offset_bottom = 98.0
+[node name="StartScreenSettingsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=993410638]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 text = "settings"
 
-[node name="StartTitle" type="RichTextLabel" parent="CanvasLayer" unique_id=94163453]
-offset_left = 268.0
-offset_top = 46.0
-offset_right = 903.0
-offset_bottom = 213.0
-text = "START SCREEN"
+[node name="Settings" parent="CanvasLayer/MarginContainer" unique_id=1564201250 instance=ExtResource("2_u80x2")]
+layout_mode = 2
 
-[connection signal="pressed" from="CanvasLayer/StartScreenTutorialButton" to="." method="_button_pressed" flags=18]
-[connection signal="pressed" from="CanvasLayer/StartScreenStartButton" to="." method="_button_pressed" flags=18]
-[connection signal="pressed" from="CanvasLayer/StartScreenSettingsButton" to="." method="_button_pressed" flags=18]
+[node name="PhoneSprite" type="AnimatedSprite2D" parent="." unique_id=1458912445]
+position = Vector2(822, 340.00003)
+rotation = 4.704996
+scale = Vector2(0.33000928, 0.3300094)
+sprite_frames = SubResource("SpriteFrames_y16t7")
+animation = &"charging"
+autoplay = "low"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/StartScreenStartButton" to="." method="_button_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/StartScreenSettingsButton" to="." method="_button_pressed" flags=18]

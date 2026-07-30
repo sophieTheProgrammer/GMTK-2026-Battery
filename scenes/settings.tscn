@@ -2,10 +2,25 @@
 
 [ext_resource type="Script" uid="uid://bgaru8iapicjo" path="res://scripts/ui/settings.gd" id="1_5p8wc"]
 
-[node name="Settings" type="Node2D" unique_id=1830954702]
+[node name="Settings" type="Control" unique_id=1564201250]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_5p8wc")
 
+[node name="Panel" type="Panel" parent="." unique_id=401543779]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 104.0
+offset_right = 966.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="BackButton" type="Button" parent="." unique_id=1614959797]
+layout_mode = 0
 offset_left = 1020.0
 offset_top = 578.0
 offset_right = 1134.0
@@ -13,21 +28,27 @@ offset_bottom = 638.0
 text = "Back"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=560423539]
-offset_left = 440.0
-offset_top = 10.0
-offset_right = 1067.0
-offset_bottom = 71.0
+layout_mode = 0
+offset_left = 414.0
+offset_top = 177.0
+offset_right = 1041.0
+offset_bottom = 238.0
 text = "SETTINGS SCREEN"
+metadata/_edit_use_anchors_ = true
 
 [node name="VB2" type="VBoxContainer" parent="." unique_id=2085333744]
 custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
 offset_left = 196.0
 offset_right = 546.0
 offset_bottom = 648.0
 theme_override_constants/separation = 17
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VB2" unique_id=932180382]
+[node name="HBoxContainer" type="HBoxContainer" parent="VB2" unique_id=1375759312]
+layout_mode = 2
+
+[node name="music" type="RichTextLabel" parent="VB2" unique_id=932180382]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Music Volume"
@@ -39,44 +60,9 @@ layout_mode = 2
 text = "SFX Volume"
 horizontal_alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="VB2" unique_id=1907862393]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Time Mode"
-horizontal_alignment = 1
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="VB2" unique_id=1445906470]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Arachnaphobia Mode"
-horizontal_alignment = 1
-
-[node name="RichTextLabel5" type="RichTextLabel" parent="VB2" unique_id=744949563]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Hello There"
-horizontal_alignment = 1
-
-[node name="RichTextLabel6" type="RichTextLabel" parent="VB2" unique_id=297911194]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Random Setting #6"
-horizontal_alignment = 1
-
-[node name="RichTextLabel7" type="RichTextLabel" parent="VB2" unique_id=1751046073]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Wowie Zowie"
-horizontal_alignment = 1
-
-[node name="RichTextLabel8" type="RichTextLabel" parent="VB2" unique_id=56146395]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "I've run out of ideas"
-horizontal_alignment = 1
-
 [node name="VB" type="VBoxContainer" parent="." unique_id=367029549]
 custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
 offset_left = 568.0
 offset_right = 918.0
 offset_bottom = 648.0
@@ -98,49 +84,6 @@ step = 0.01
 value = 1.0
 allow_greater = true
 
-[node name="Button3" type="Button" parent="VB" unique_id=1844660137]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "American"
-expand_icon = true
-
-[node name="Button4" type="Button" parent="VB" unique_id=2117603685]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Off"
-expand_icon = true
-
-[node name="Button5" type="Button" parent="VB" unique_id=1358085391]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Hi"
-expand_icon = true
-
-[node name="Button6" type="Button" parent="VB" unique_id=820388761]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Random Button #4"
-expand_icon = true
-
-[node name="Button7" type="Button" parent="VB" unique_id=1870958681]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "SMBW"
-expand_icon = true
-
-[node name="Button8" type="Button" parent="VB" unique_id=1964221358]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "..."
-expand_icon = true
-
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="VB/Music Slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="VB/SFX Slider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="VB/Button3" to="." method="_on_button_3_pressed"]

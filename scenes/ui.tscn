@@ -2,12 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://bxdqb45h0ow5w" path="res://scripts/ui/ui.gd" id="1_x4jx1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_h2h35"]
-font_size = 48
-font_color = Color(0.8156053, 0.8712386, 0.90065926, 1)
-outline_size = 16
-outline_color = Color(0.4745098, 0.31764707, 0.1882353, 1)
+[ext_resource type="LabelSettings" uid="uid://qcdrqvct7ckn" path="res://Label.tres" id="3_yev5y"]
 
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
 script = ExtResource("1_x4jx1")
@@ -23,4 +18,4 @@ offset_right = 120.0
 offset_bottom = 58.0
 grow_horizontal = 2
 text = "BATTERY: 20%"
-label_settings = SubResource("LabelSettings_h2h35")
+label_settings = ExtResource("3_yev5y")
