@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4jx1"]
 size = Vector2(56, 41.999992)
 
-[node name="charger" type="Area2D" unique_id=9780923]
+[node name="charger" type="Area2D" unique_id=9780923 groups=["charger"]]
 collision_mask = 3
 script = ExtResource("1_aanbt")
 
