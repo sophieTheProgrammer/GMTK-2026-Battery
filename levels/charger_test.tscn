@@ -13,7 +13,7 @@ rotation = 1.563815
 
 [node name="charger3" parent="." unique_id=86496109 instance=ExtResource("1_3271u")]
 position = Vector2(-451.99988, -60)
-rotation = 4.691445
+rotation = -1.563815
 
 [node name="charger4" parent="." unique_id=1496451648 instance=ExtResource("1_3271u")]
 position = Vector2(-9.999817, 443.00006)
