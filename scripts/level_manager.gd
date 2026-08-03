@@ -6,6 +6,7 @@ var current_charger : Charger
 var current_level : Node
 
 func _ready() -> void:
+	Global.game_state = Global.game_states.GAME
 	_load_level(0)
 
 # listen to signal from child to start new level here

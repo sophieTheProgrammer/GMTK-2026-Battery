@@ -10,3 +10,10 @@ var fade_node : CanvasLayer
 var debug_mode : bool = true
 
 const DEBUG_EASY_WIN : bool = false
+
+enum game_states {
+	START,
+	GAME,
+	END
+}
+var game_state : game_states = game_states.START

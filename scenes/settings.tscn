@@ -20,12 +20,15 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="BackButton" type="Button" parent="." unique_id=1614959797]
-layout_mode = 0
-offset_left = 1020.0
-offset_top = 578.0
-offset_right = 1134.0
-offset_bottom = 638.0
+layout_mode = 1
+offset_left = 1008.0
+offset_top = 548.0
+offset_right = 1125.0
+offset_bottom = 614.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Back"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=560423539]
 layout_mode = 0

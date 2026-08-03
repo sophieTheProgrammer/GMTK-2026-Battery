@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://oiq1r5rpm8vw"
+path="res://.godot/imported/my seventh song - low power mode main.wav-eb76767b6acb93c8cd23c632442627b3.sample"
+
+[deps]
+
+source_file="res://audio/my seventh song - low power mode main.wav"
+dest_files=["res://.godot/imported/my seventh song - low power mode main.wav-eb76767b6acb93c8cd23c632442627b3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

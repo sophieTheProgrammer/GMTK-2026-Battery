@@ -10,10 +10,16 @@ var current_player :AudioStreamPlayer = null
 const CLICK = preload("uid://crycuexvqoxs5")
 const LOW_POWER_WARNING = preload("res://audio/universfield-low-power-warning-487889.mp3")
 const CHARGING_SFX = preload("uid://be1i70q8kjaxk")
-
+const TITLE_MUSIC = preload("res://audio/my fifth song - low power mode.wav")
+const MAIN_MUSIC = preload("uid://oiq1r5rpm8vw")
 
 # MUSIC: only one song can play at a time, it will override, Music bus
 # SFX: can play simultaneously, SFX bus
+func _process(delta: float) -> void:
+	if Global.game_state == Global.game_states.START:
+		AudioPlayer.play_music(TITLE_MUSIC, 1.5)
+	elif Global.game_state == Global.game_states.GAME:
+		AudioPlayer.play_music(MAIN_MUSIC, 1.5)
 
 # NOTE: VOLUME IS A PERCENTAGE BETWEEN 0 AND 1
 func play_sfx(stream : AudioStream, volume : float = 1) -> void:
@@ -29,12 +35,12 @@ func play_sfx(stream : AudioStream, volume : float = 1) -> void:
 	fx.finished.connect(fx.queue_free)
 
 
-func play_music(Stream : AudioStream, Volume : float) -> void:
+func play_music(Stream : AudioStream, Volume : float = 1.5) -> void:
 	if current_player:
 		if Stream == current_player.stream:
 			return
 		current_player.queue_free()
-	var musicPlayer : AudioStreamPlayer= AudioStreamPlayer.new()
+	var musicPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 	musicPlayer.stream = Stream
 	musicPlayer.name = "Music Player"
 	musicPlayer.volume_db = Volume
