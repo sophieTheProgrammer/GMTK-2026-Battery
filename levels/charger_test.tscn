@@ -5,8 +5,16 @@
 [node name="ChargerTest" type="Node2D" unique_id=939822944]
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("1_3271u")]
-position = Vector2(-228, -726)
+position = Vector2(67, -497)
 
 [node name="charger2" parent="." unique_id=486129028 instance=ExtResource("1_3271u")]
-position = Vector2(859, 47)
+position = Vector2(575, 75)
 rotation = 1.563815
+
+[node name="charger3" parent="." unique_id=86496109 instance=ExtResource("1_3271u")]
+position = Vector2(-451.99988, -60)
+rotation = 4.691445
+
+[node name="charger4" parent="." unique_id=1496451648 instance=ExtResource("1_3271u")]
+position = Vector2(-9.999817, 443.00006)
+rotation = 3.0735247

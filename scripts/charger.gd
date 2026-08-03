@@ -2,7 +2,11 @@ class_name Charger
 extends Area2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 signal phone_recieved
+var direction : Vector2 = Vector2.from_angle(deg_to_rad(rotation_degrees))
 
+
+func _ready() -> void:
+	print(direction)
 # WARNING: CHARGER ONLY WORKS FACING DOWN
 '''
 func _on_area_entered(area: Area2D) -> void:	
@@ -12,12 +16,11 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	#phone_recieved.emit(self)
-	var entry_vector : Vector2 = global_position.direction_to(area.global_position)
-	print(entry_vector)
 	if area.get_parent().is_in_group("phone"):
+		var phone_velocity : Vector2 = area.get_parent().velocity.normalized()
 		print("RAAAWRYGIYAWGKDHSAKHDJ A PHONE ENTERED ME!!!")
-		#print((entry_vector.dot(Vector2.UP)))
-		phone_recieved.emit(self)
-		if entry_vector.dot(Vector2.UP) > 0:
-			print("Player detected in charger area")
+		print(direction.dot(phone_velocity))
+		if direction.dot(phone_velocity) > 0:
+			print("Phone has the right dot product so I'm emitting")
+			phone_recieved.emit(self)
 			
