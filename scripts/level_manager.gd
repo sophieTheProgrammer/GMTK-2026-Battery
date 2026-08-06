@@ -2,8 +2,9 @@ extends Node2D
 
 @export var levels: Array[PackedScene]
 var current_level_index : int = 0
-#var current_charger : Charger
 var current_level : Node
+
+signal game_complete
 
 func _ready() -> void:
 	Global.game_state = Global.game_states.GAME
@@ -18,25 +19,28 @@ func _on_phone_recieved(area: Area2D) -> void:
 	EventBus.level_completed.emit(current_level_index)
 	await Global.fade_node.fade(1).finished
 
-	_load_level(current_level_index)
-	
-	EventBus.start_next_level.emit()
-	Global.fade_node.fade(0)
+	if _load_level(current_level_index):
+		EventBus.start_next_level.emit()
+		Global.fade_node.fade(0)
+	else:
+		print("itz the end of the game")
+		game_complete.emit()
 
 	
-func _load_level(level_number : int) -> void:
+func _load_level(level_number : int) -> bool:
 	var level : Node
 	
 	if current_level:
 		current_level.queue_free()
 
-	if levels[level_number]:
+	if levels.size() > level_number:
 		level = levels[level_number].instantiate()
 		add_child(level)
 	else:
-		printerr("no more levels")
+		return false
 	current_level = level
 	_connect_charger_signals.call_deferred()
+	return true
 
 func _connect_charger_signals() -> void:
 	var chargers : Array = get_tree().get_nodes_in_group("charger")

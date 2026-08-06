@@ -42,3 +42,5 @@ horizontal_alignment = 1
 [node name="MainMenuButton" type="Button" parent="game complete/MarginContainer/VBoxContainer" unique_id=1357237335]
 layout_mode = 2
 text = "main menu"
+
+[connection signal="pressed" from="game complete/MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
