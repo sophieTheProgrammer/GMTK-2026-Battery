@@ -11,7 +11,7 @@ const SPEED := 1400.0
 const DECELERATION : = 1000.0
 
 var current_spin_velocity : float = 0.0
-var current_battery_level : int = 20
+var current_battery_level : int = 5
 const BATTERY_LEVEL : int = 5
 var state : player_state = player_state.IDLE
 

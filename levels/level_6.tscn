@@ -10,7 +10,7 @@
 script = ExtResource("1_8tsbn")
 
 [node name="charger" parent="." unique_id=9780923 instance=ExtResource("2_rqsg2")]
-position = Vector2(-407, -1094)
+position = Vector2(-403, -936)
 rotation = -1.5707964
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=113051776]
@@ -19,15 +19,15 @@ color = Color(0.49411765, 0.32941177, 0.19607843, 1)
 polygon = PackedVector2Array(-958, -1539, -919, 267, 1168, 298, 1065, -1434, 2167, -2566, 3289, 2638, -3125, 2359, -2949, -2685, -1008, -2781, 2175, -2534, 1594, -1476)
 
 [node name="Book2" parent="." unique_id=1786726426 instance=ExtResource("3_fpvgn")]
-position = Vector2(313, -875.00006)
+position = Vector2(365, -717.00006)
 rotation = 1.556212
 
 [node name="Book3" parent="." unique_id=2088790106 instance=ExtResource("3_fpvgn")]
-position = Vector2(255, -213)
+position = Vector2(411, -299)
 rotation = 1.556212
 
 [node name="Book4" parent="." unique_id=1592156743 instance=ExtResource("3_fpvgn")]
-position = Vector2(273, -578)
+position = Vector2(440.99997, -556)
 rotation = 1.8619496
 
 [node name="Wall" type="Sprite2D" parent="." unique_id=451196568]
@@ -48,5 +48,5 @@ visible = false
 polygon = PackedVector2Array(-659, 25, -639, -1543, 852, -1518, 847, 41, 1819, 853, 1562, -2256, -1312, -2681, -1414, 867, 878, 1025, 1709, 601, 1054, 60)
 
 [node name="Water Bottle2" parent="." unique_id=320770307 instance=ExtResource("5_3t5n2")]
-position = Vector2(-239, -639)
+position = Vector2(-243, -487)
 rotation = 1.5707964

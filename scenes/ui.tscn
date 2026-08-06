@@ -17,7 +17,7 @@ offset_left = -120.0
 offset_right = 120.0
 offset_bottom = 58.0
 grow_horizontal = 2
-text = "BATTERY: 20%"
+text = "Battery: 20%"
 label_settings = ExtResource("3_yev5y")
 
 [node name="game complete" type="CanvasLayer" parent="." unique_id=126362584]
@@ -36,11 +36,11 @@ alignment = 1
 [node name="Label" type="Label" parent="game complete/MarginContainer/VBoxContainer" unique_id=1515098103]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "game complete!"
+text = "Game Complete!"
 horizontal_alignment = 1
 
 [node name="MainMenuButton" type="Button" parent="game complete/MarginContainer/VBoxContainer" unique_id=1357237335]
 layout_mode = 2
-text = "main menu"
+text = "Main Menu"
 
 [connection signal="pressed" from="game complete/MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
