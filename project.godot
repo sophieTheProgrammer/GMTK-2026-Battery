@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Low Power Mode"
-run/main_scene="uid://ck17q1kicx35t"
+run/main_scene="uid://cjulv74qj1553"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -8,10 +8,6 @@ func _ready() -> void:
 	EventBus.battery_changed.connect(_on_battery_changed)
 	game_complete.hide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 # recieves battery_changed signal
 func _on_battery_changed(number: int) -> void:
 	battery_label.text = "Battery: " + str(number) + "%"
