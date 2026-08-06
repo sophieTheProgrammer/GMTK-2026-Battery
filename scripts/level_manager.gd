@@ -4,6 +4,7 @@ extends Node2D
 var current_level_index : int = 0
 #var current_charger : Charger
 var current_level : Node
+signal game_completed
 
 func _ready() -> void:
 	Global.game_state = Global.game_states.GAME
@@ -18,13 +19,16 @@ func _on_phone_recieved(area: Area2D) -> void:
 	EventBus.level_completed.emit(current_level_index)
 	await Global.fade_node.fade(1).finished
 
-	_load_level(current_level_index)
-	
-	EventBus.start_next_level.emit()
-	Global.fade_node.fade(0)
+	if _load_level(current_level_index):
+		EventBus.start_next_level.emit()
+		Global.fade_node.fade(0)
+	else:
+		print("no more levels")
+		game_completed.emit()
+
 
 	
-func _load_level(level_number : int) -> void:
+func _load_level(level_number : int) -> bool:
 	var level : Node
 	
 	if current_level:
@@ -33,15 +37,16 @@ func _load_level(level_number : int) -> void:
 	if levels[level_number]:
 		level = levels[level_number].instantiate()
 		add_child(level)
+		return true
 	else:
-		printerr("no more levels")
+		return false
 	current_level = level
 	_connect_charger_signals.call_deferred()
 
 func _connect_charger_signals() -> void:
 	var chargers : Array = get_tree().get_nodes_in_group("charger")
 	if !chargers:
-		print("no charger reference in this level")
+		printerr("no charger reference in this level")
 	
 	for charger : Charger in chargers:
 		print("connecting charger")

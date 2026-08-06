@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-@onready var battery_indicator_label: Label = $BatteryIndicatorLabel
 @onready var charging_port: Area2D = $ChargingPort
 @onready var phone_sprite: AnimatedSprite2D = $PhoneSprite
 
 # Constants
-const TOP_SPIN_SPEED := 5.0
+const TOP_SPIN_SPEED := 4.0
 const SPIN_ACCELERATION := 5.0
 const SPEED := 1400.0
 const DECELERATION : = 1000.0
