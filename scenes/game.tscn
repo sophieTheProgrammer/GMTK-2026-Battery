@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://ck17q1kicx35t"]
 
 [ext_resource type="Texture2D" uid="uid://dt00e1pl8rkcu" path="res://art/Wood background.png" id="1_iywne"]
-[ext_resource type="PackedScene" uid="uid://pe0q2r2mcogg" path="res://levels/level_1.tscn" id="1_lbhrr"]
 [ext_resource type="Script" uid="uid://be4w7gvuy45ip" path="res://scripts/level_manager.gd" id="1_p57ef"]
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://22rikssr2wp5" path="res://levels/level_4.tscn" id="2_gee14"]
-[ext_resource type="PackedScene" uid="uid://bkd5pt52jprbr" path="res://levels/level_6.tscn" id="2_vtaks"]
+[ext_resource type="PackedScene" uid="uid://b4irt31thm3aa" path="res://levels/charger_test.tscn" id="2_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://ddahf4toxyraj" path="res://scenes/phone.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://8vjhb0tvcq8e" path="res://levels/level_2.tscn" id="3_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://c65bss8nw86wa" path="res://levels/level_3.tscn" id="4_gee14"]
-[ext_resource type="PackedScene" uid="uid://c2bhh13q5q8rf" path="res://levels/level_5.tscn" id="6_0tnpc"]
 
 [sub_resource type="Environment" id="Environment_h2h35"]
 background_mode = 3
@@ -23,7 +18,7 @@ adjustment_saturation = 1.08
 
 [node name="LevelManager" type="Node2D" parent="." unique_id=712661078]
 script = ExtResource("1_p57ef")
-levels = Array[PackedScene]([ExtResource("2_vtaks"), ExtResource("1_lbhrr"), ExtResource("3_u5sy4"), ExtResource("4_gee14"), ExtResource("2_gee14"), ExtResource("6_0tnpc")])
+levels = Array[PackedScene]([ExtResource("2_0tnpc")])
 
 [node name="WoodBackground" type="Sprite2D" parent="." unique_id=1820250660]
 self_modulate = Color(0.9020199, 0.9506138, 0.9506138, 1)

@@ -19,3 +19,26 @@ offset_bottom = 58.0
 grow_horizontal = 2
 text = "BATTERY: 20%"
 label_settings = ExtResource("3_yev5y")
+
+[node name="game complete" type="CanvasLayer" parent="." unique_id=126362584]
+
+[node name="MarginContainer" type="MarginContainer" parent="game complete" unique_id=387560334]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game complete/MarginContainer" unique_id=1113485002]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="game complete/MarginContainer/VBoxContainer" unique_id=1515098103]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "game complete!"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="game complete/MarginContainer/VBoxContainer" unique_id=1357237335]
+layout_mode = 2
+text = "main menu"
